@@ -1,0 +1,40 @@
+{% extends 'staff/main.html' %}
+{% load static %}
+{% block title %}Home{% endblock %}
+
+{% block content %}
+    <main id="gall__main__main">
+        {% include 'staff/header.html' %}
+        {% include 'staff/navigation.html' %}
+        <section id="gall__main">
+            {% if product_images %}
+            {%for p in products%}
+            <article class=" gall__art__one__main ">
+                <header><span class="gall_art_sec_name">{{p.name}}</span>
+                    <span class="gall_art_item_add_btn">
+                        <a href="{% url 'store:add_product_img'%}" class="add_item_btn"><i class="fas fa-plus "></i> item</a>
+                    </span>
+                </header>
+                <section class="gall__arts " id="gall__art__one ">
+                    {%for img in product_images %}
+                    {% if img.product.name == p.name %}
+                    <div class="gall__art__img__div ">
+                        <img src="{{img.file.url}}" alt="photo image" class="gall__art__one__img">
+                        <div class="gall__art__one__img__desc">
+                            <a href="{% url 'store:update_product_image' img.id %}" class="gall__art__img__one__name "><i class="far fa-edit"></i></a>
+                            <section class="gall__art__img__one__num "><a href="{% url 'store:delete_product_img' img.id %}" class="tbl__btn__delete ">
+                                <i class="fas fa-trash "></i></a>
+                            </section>
+                        </div>
+                    </div>
+                    {%else%}
+                    {%endif%}
+                    {%endfor%}
+                </section>
+            </article>
+            {%endfor%}
+            {%else%}
+            {%endif%}
+        </section>
+    </main>
+{% endblock %}

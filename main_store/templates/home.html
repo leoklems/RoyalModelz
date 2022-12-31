@@ -1,0 +1,72 @@
+{% extends 'main_store.html' %}
+{% load static %}
+{% block title %}Home{% endblock %}
+
+{% block content %}
+    <main id="hm_main">
+        <header id="hm_top_h">
+            {% include 'navigation.html' %}
+            {% if slides %}
+            <article id="hm__slides">
+                <div class="hm_slides_container">
+                    {%for s in slides%}
+                        {%if s.link%}
+                            <a href="{{s.link}}" id="hm_slide" class="mySlides fade">
+                                <section id="hm_slide_img" class="hm_slide_sec"><img src="{{s.image.url}}" alt="" id="hm__top__ad__img"></section>
+                            </a>
+                        {%else%}
+                            <div id="hm_slide" class="mySlides fade">
+                                <section id="hm_slide_img" class="hm_slide_sec"><img src="{{s.image.url}}" alt="" id="hm__top__ad__img"></section>
+                            </div>
+                        {%endif%}
+                    {%endfor%}
+                </div>
+            </article>
+            {%else%}
+            {%endif%}
+        </header>
+        <article id="hm_main_body">
+            {% if products %}
+                {%for p_cat in product_cats%}
+                {% if p_cat.product_categories.count > 0 %}
+                <section class="hm_main_body_sec" id="hm_b_suits">
+                <header class="hm_main_body_sec_head">{{p_cat.name}}</header>
+                <div class="hm_main_body_sec_body">
+                    {%for p in products %}
+                    {% if p.category == p_cat %}
+
+                    <a href="{% url 'store:product' p.product_id %}" class="hm_main_body_art">
+                        <header class="hm_main_body_art_head">{{p.name}}</header>
+                            {%for img in product_images %}
+                            {% if img.product.name == p.name %}
+                                <img src="{{img.file.url}}" alt="Article image" class="hm_main_body_art_img">
+                            {%else%}
+                            {%endif%}
+                            {%endfor%}
+                        <footer class="hm_main_body_art_footer">
+<!--                            <section class="badge __new">new</section>-->
+                            {% if p.discount_price %}
+                            <section class="price">&#8358; {{p.discount_price}} <span class="disc_badge">-{{p.percentage_discount}}%</span></section>
+                            {%else%}
+                            <section class="price">&#8358; {{p.price}} </section>
+                            {%endif%}
+
+                        </footer>
+                    </a>
+                    {%else%}
+                    {%endif%}
+                    {%endfor%}
+                </div>
+                </section>
+                {%else%}
+                {%endif%}
+                {%endfor%}
+            {%else%}
+            {%endif%}
+        </article>
+        {% include 'footer.html' %}
+        {% include 'whatsapp.html' %}
+
+    </main>
+{% endblock %}
+

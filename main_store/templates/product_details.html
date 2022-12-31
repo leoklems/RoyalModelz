@@ -1,0 +1,79 @@
+{% extends 'main_store.html' %}
+{% load static %}
+{% block title %}Product details{% endblock %}
+
+{% block content %}
+    <main id="hm_main">
+        <header id="hm_top_h">
+            {% include 'navigation.html' %}
+        </header>
+        <article id="dit_body">
+            <header id="dit_body_head">
+                <div class="dit_body_head_items">
+                    {% for img in product_images %}
+                    <img src="{{img.file.url}}" alt="Article image" class="dit_body_img hm_main_body_art_img">
+                    {%endfor%}
+                </div>
+            </header>
+            <section id="dit_body_dit">
+                <header class="dit_body_dit_name">{{object.category}}
+<!--                    <span class="badge">new</span>-->
+                </header>
+                <div class="dit_body_dit_brand">
+                    <span class="dit_body_brand_cap _cap">brand: </span>
+                    <span class="dit_body_brand_name">{{object.category}}</span>
+                </div>
+                <div class="dit_body_dit_size">
+                    <span class="dit_body_size_cap _cap">sizes available</span>
+                    <span class="dit_body_sizes">{{object.sizes}}</span>
+                </div>
+                <div class="dit_body_dit_color">
+                    <span class="dit_body_color_cap _cap">colors available: </span>
+                    <span class="dit_body_colors">{{object.colors}}</span>
+                </div>
+                <div class="dit_body_dit_price">
+                    {% if object.discount_price %}
+                    <span class="dit_body_disc_price">&#8358; {{object.discount_price}}</span>
+                    <del class="dit_body_norm_price">&#8358; {{object.price}}</del>
+                    <span class="disc_badge">-{{object.percentage_discount}}%</span>
+                    {%else%}
+                    <span class="dit_body_disc_price">&#8358; {{object.price}}</span>
+                    {%endif%}
+                </div>
+            </section>
+        </article>
+        <article id="hm_main_body">
+            {% if products %}
+                <section class="hm_main_body_sec" id="hm_b_suits">
+                <div class="hm_main_body_sec_body">
+                    {%for p in products %}
+                    <a href="{% url 'store:product' p.product_id%}" class="hm_main_body_art">
+                        <header class="hm_main_body_art_head">{{p.name}}</header>
+                            {%for img in product_images_o %}
+                            {% if img.product.name == p.name %}
+                                <img src="{{img.file.url}}" alt="Article image" class="hm_main_body_art_img">
+                            {%else%}
+                            {%endif%}
+                            {%endfor%}
+                        <footer class="hm_main_body_art_footer">
+<!--                            <section class="badge __new">new</section>-->
+                            {% if p.discount_price %}
+                            <section class="price">&#8358; {{p.discount_price}} <span class="disc_badge">-{{p.percentage_discount}}%</span></section>
+                            {%else%}
+                            <section class="price">&#8358; {{p.price}} </section>
+                            {%endif%}
+
+                        </footer>
+                    </a>
+                    {%endfor%}
+                </div>
+                </section>
+            {%else%}
+            {%endif%}
+        </article>
+        {% include 'footer.html' %}
+        {% include 'whatsapp.html' %}
+
+    </main>
+{% endblock %}
+

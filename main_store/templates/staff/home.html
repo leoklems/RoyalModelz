@@ -1,0 +1,117 @@
+{% extends 'staff/main.html' %}
+{% load static %}
+{% block title %}Home{% endblock %}
+
+{% block content %}
+    <main id="gall__main__main">
+        {% include 'staff/header.html' %}
+        {% include 'staff/navigation.html' %}
+        <section id="gall__main" class="dit__pg">
+            {% if slides %}
+            <article class=" gall__art__one__main ">
+                <header><span class="gall_art_sec_name">gallary one</span>
+                    <span class="gall_art_item_add_btn">
+                        <a href="{% url 'store:add_slide' %}" class="add_item_btn"><i class="fas fa-plus "></i> item</a>
+                    </span>
+                </header>
+                <section class="gall__arts " id="gall__art__one ">
+                    {% for s in slides %}
+                    <div class="gall__art__img__div ">
+                        <img src="{{s.image.url}}" alt="photo image " class="gall__art__one__img ">
+                        <div class="gall__art__one__img__desc ">
+                             <a href="{% url 'store:update_slide' s.id %}" class=""><i class="far fa-edit"></i><i class="fas fa-camera"></i></a>
+                            {% if s.link %}
+                            <a href="" class=""><i class="far fa-edit"></i><i class="fas fa-anchor"></i></a>
+                            {%else%}
+                            {%endif%}
+                            <a href="{% url 'store:delete_slide' s.id %}" class=""><i class="fas fa-trash"></i></a>
+<!--                            <a href=" " class="gall__art__img__one__name ">yellow touch</a>-->
+<!--                            <section class="gall__art__img__one__num "><a href=" " class="tbl__btn__delete ">-->
+<!--                                <i class="fas fa-trash "></i></a>-->
+<!--                            </section>-->
+                        </div>
+                    </div>
+                    {%endfor%}
+                </section>
+            </article>
+            {%else%}
+            {%endif%}
+            {% if products %}
+            {%for p_cat in product_cats%}
+            {% if p_cat.product_categories.count > 0 %}
+            <article class=" gall__art__one__main ">
+                <header><span class="gall_art_sec_name">{{p_cat.name}}</span>
+                    <span class="gall_art_item_add_btn">
+                        <a href="{% url 'store:add_product' %}" class="add_item_btn"><i class="fas fa-plus "></i> item</a>
+                    </span>
+                </header>
+                <section class="gall__arts " id="gall__art__one ">
+                    {%for p in products %}
+                    {% if p.category == p_cat %}
+                    <div class="gall__art__img__div ">
+                        {%for img in product_images %}
+                        {% if img.product.name == p.name %}
+                        <img src="{{img.file.url}}" alt="photo image" class="gall__art__one__img hm_main_body_art_img">
+                        {%else%}
+                        {%endif%}
+                        {%endfor%}
+                        <div class="gall__art__one__img__desc">
+<!--                             <a href="" class="tbl__btn__edit"><i class="far fa-eye"></i><i class="fas fa-camera"></i></a>-->
+<!--                            {% if s.link %}-->
+<!--                            <a href="" class="tbl__btn__edit"><i class="far fa-edit"></i><i class="fas fa-anchor"></i></a>-->
+<!--                            {%else%}-->
+<!--                            {%endif%}-->
+<!--                            <a href="" class="tbl__btn__delete"><i class="fas fa-trash"></i></a>-->
+                            <a href="{% url 'store:staff_product_detail' p.product_id %}" class="gall__art__img__one__name "><i class="far fa-eye"></i></a>
+                            <section class="gall__art__img__one__num "><a href="{% url 'store:delete_product' p.product_id %} " class="tbl__btn__delete ">
+                                <i class="fas fa-trash "></i></a>
+                            </section>
+                        </div>
+                    </div>
+                    {%else%}
+                    {%endif%}
+                    {%endfor%}
+                </section>
+            </article>
+            {%else%}
+            {%endif%}
+            {%endfor%}
+            {%else%}
+            {%endif%}
+        {% if product_cats %}
+            <article id="table__one">
+                <table>
+                    <caption><span class="gall_art_sec_name">categories</span>
+                    <span class="gall_art_item_add_btn">
+                        <a href="{% url 'store:add_product_cat' %}" class="add_item_btn"><i class="fas fa-plus "></i> product category</a>
+                    </span></caption>
+                    <tbody id="table__one__body">
+                        <tr>
+                            <th>s/n</th>
+                            <th>name</th>
+                            <th>number of products</th>
+                            <th>controls</th>
+                        </tr>
+                        <tr>
+                            {%for p_cat in product_cats%}
+                            <td>{{forloop.counter}}</td>
+                            <td>{{p_cat.name}}</td>
+                            <td>{{p_cat.product_categories.count}}</td>
+                            <td>
+                                <div class="table__ctrl__btns">
+                                    <a href="{% url 'store:update_product_cats' p_cat.id %}" class="tbl__btn__edit"><i class="far fa-edit"></i></a>
+                                    <a href="{% url 'store:delete_product_cat' p_cat.id %}" class="tbl__btn__delete"><i class="fas fa-trash"></i></a>
+                                </div>
+                            </td>
+                            {%endfor%}
+
+                        </tr>
+                    </tbody>
+                </table>
+            </article>
+
+        {%else%}
+        {%endif%}
+        </section>
+    </main>
+{% endblock %}

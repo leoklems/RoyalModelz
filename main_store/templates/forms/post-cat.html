@@ -1,0 +1,23 @@
+{% extends 'staff/main.html' %}
+{% load static %}
+{% block title %}Add Product{% endblock %}
+
+{% block content %}
+    <main id="all__forms">
+        {% include 'staff/header.html' %}
+        <section id="forms__sec" class="mini_forms__sec">
+         <article id="form__registration">
+                <header>Add new product category</header>
+                <form action="" id="sign__up" method="post">
+                     {% csrf_token %}
+                    <div class="signup__div" id="signup__username__div">
+                        <input type="text" id="signup__username" placeholder="name" name="name">
+                    </div>
+                    <input type="submit" value="add" id="signup__submit">
+
+                </form>
+            </article>
+        </section>
+    </main>
+{% endblock %}
+

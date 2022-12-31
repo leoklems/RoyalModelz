@@ -1,0 +1,27 @@
+{% extends 'staff/main.html' %}
+{% load static %}
+{% block title %}Update {{object.name}} Category{% endblock %}
+
+{% block content %}
+    <main id="all__forms">
+        {% include 'staff/header.html' %}
+        <section id="forms__sec" class="mini_forms__sec">
+         <article id="form__registration">
+                <header>Update {{object.name}} category</header>
+                <form action="" id="sign__up" method="post">
+                     {% csrf_token %}
+                    <div class="signup__div">
+                        <label for="signup__dp" id="signup__dp__label">Category</label>
+                        {{form.category}}
+                    </div>
+                    <div id="form_ctrl_btns" class="form_ctrl_btns">
+                        <a href="{% url 'store:staff_product_detail' object.product_id %}" class="form_ctrl_btn_back">Cancle</a>
+                        <input type="submit" value="Upload"  class="form_ctrl_btn_del">
+                    </div>
+
+                </form>
+            </article>
+        </section>
+    </main>
+{% endblock %}
+

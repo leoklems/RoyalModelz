@@ -1,0 +1,30 @@
+{% extends 'staff/main.html' %}
+{% load static %}
+{% block title %}Add Product{% endblock %}
+
+{% block content %}
+    <main id="all__forms">
+        {% include 'staff/header.html' %}
+        <section id="forms__sec" class="mini_forms__sec">
+         <article id="form__registration">
+                <header>Add new slide</header>
+                <form id="sign__up" method="post" enctype="multipart/form-data">
+                     {% csrf_token %}
+                    <div class="signup__div">
+                        <input type="number" name="index" class="all__form__stuff" placeholder="Index">
+                    </div>
+                    <div class="signup__div" id="signup__dp__div">
+                        <label for="signup__dp" id="signup__dp__label"><i class="fas fa-camera"></i></label>
+                        <input type="file" name="image" id="signup__dp">
+                    </div>
+                    <div class="signup__div checkbox__input">
+                        <input type="text" name="link" class="all__form__stuff" placeholder="link">
+                    </div>
+                    <input type="submit" value="Upload" id="signup__submit">
+
+                </form>
+            </article>
+        </section>
+    </main>
+{% endblock %}
+

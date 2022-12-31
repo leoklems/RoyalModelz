@@ -1,0 +1,28 @@
+{% extends 'staff/main.html' %}
+{% load static %}
+{% block title %}Update {{object.name}}'s Discount Price{% endblock %}
+
+{% block content %}
+    <main id="all__forms">
+        {% include 'staff/header.html' %}
+        <section id="forms__sec" class="mini_forms__sec">
+         <article id="form__registration">
+                <header>Update {{object.name}}'s discount price</header>
+                <form action="" id="sign__up" method="post">
+                     {% csrf_token %}
+                    <div class="signup__div" id="signup__username__div">
+                        <input type="number" id="signup__username" placeholder="Discount price"
+                               name="discount_price" value="{{object.discount_price}}">
+                    </div>
+                    <div id="form_ctrl_btns" class="form_ctrl_btns">
+                        <a href="{% url 'store:staff_product_detail' object.product_id %}"
+                           class="form_ctrl_btn_back">Cancel</a>
+                        <input type="submit" value="Upload"  class="form_ctrl_btn_del">
+                    </div>
+
+                </form>
+            </article>
+        </section>
+    </main>
+{% endblock %}
+

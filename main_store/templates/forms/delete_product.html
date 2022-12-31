@@ -1,0 +1,20 @@
+{% extends 'staff/main.html' %}
+{% load static %}
+{% block title %}Delete {{object}}{% endblock %}
+
+{% block content %}
+    <main id="all__forms">
+        {% include 'staff/header.html' %}
+      <section id="forms__sec" class="confirm__main">
+            <header id="confirm__main__quest">Are you sure you want to <span id="confirm__delete">delete  {{object}}?</span></header>
+            <form method="post">
+                <div id="form_ctrl_btns" class="form_ctrl_btns">
+                    {% csrf_token %}
+                    <a href="{% url 'store:s_home' %}" class="form_ctrl_btn_back">Cancel</a>
+                    <input type="submit" value="Delete"  class="form_ctrl_btn_del">
+                </div>
+            </form>
+        </section>
+    </main>
+{% endblock %}
+

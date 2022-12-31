@@ -1,0 +1,27 @@
+{% extends 'staff/main.html' %}
+{% load static %}
+{% block title %}Login{% endblock %}
+
+{% block content %}
+    <main id="all__forms">
+        {% include 'staff/header.html' %}
+        <section id="forms__sec" class="mini_forms__sec">
+            <article id="form__login">
+                <header>login to proceed</header>
+                <form method="post" id="login">
+                    {% csrf_token %}
+                    <input type="text" name="username" id="form__login__email" placeholder="username">
+                    <input type="password" name="password" id="form__login__pwrd" placeholder="password">
+                    <label for="form__login__remember__me" id="form__login__remember__me__label">Remember me</label>
+                    <a href="" id="login__forgot__pwrd">
+                        forgot password?
+                    </a>
+                    <input type="checkbox" name="" id="form__login__remember__me">
+                    <input type="submit" value="LOGIN" id="form__login__submit">
+                    <div id="login__signup">New user? <a href="" id="login__signup__link">Sign Up</a></div>
+                </form>
+            </article>
+        </section>
+    </main>
+{% endblock %}
+

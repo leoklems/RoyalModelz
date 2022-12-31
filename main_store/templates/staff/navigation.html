@@ -1,0 +1,42 @@
+{% load static %}
+{% load cache %}
+
+<nav id="hm__sidebar" class="hm__sidebar">
+    <header id="hm__user__info">
+        <img src="{{request.user.author.profile_pic.url}}" alt="user display image" id="hm__dp">
+        <section>
+            <div id="hm__user__name">{{request.user.author.username}}</div>
+            <div id="hm__user__title">admim</div>
+        </section>
+    </header>
+    <section id="hm__nav">
+        <ul>
+            <li class="hm__nav__item">
+                <a href="{% url 'store:s_home' %}" class="hm__nav__icon">
+                    <i class="fas fa-home"></i><span class="hm__nav__cont">Home</span>
+                </a>
+            </li>
+            <li class="hm__nav__item ">
+                <a href="{% url 'store:product_images' %}" class="hm__nav__link ">
+                    <span class="hm__nav__icon "><i class="fas fa-code "></i>
+                    </span><span class="hm__nav__cont ">Product Images</span>
+                </a>
+            </li>
+            <li class="hm__nav__item ">
+                <a href="{% url 'store:logout' %}" class="hm__nav__link ">
+                    <span class="hm__nav__icon "><i class="fas fa-camera "></i></span><span class="hm__nav__cont ">Logout</span>
+                </a>
+            </li>
+<!--            <li class="hm__nav__item ">-->
+<!--                <a href="{% url 'store:s_home' %}" class="hm__nav__link ">-->
+<!--                    <span class="hm__nav__icon "><i class="fas fa-message "></i></span><span class="hm__nav__cont ">Chat</span>-->
+<!--                </a>-->
+<!--            </li>-->
+<!--            <li class="hm__nav__item">-->
+<!--                <a href="{% url 'store:s_home' %}" class="hm__nav__link ">-->
+<!--                    <span class="hm__nav__icon "><i class="fas fa-gear "></i></span><span class="hm__nav__cont ">setting</span>-->
+<!--                </a>-->
+<!--            </li>-->
+        </ul>
+    </section>
+</nav>

@@ -1,0 +1,39 @@
+{% load static %}
+{% load cache %}
+
+<article id="hm_menu_bar">
+                <a href="{% url 'store:home' %}" id="hm__site__logo">
+                    <img src="{% static 'assets/images/logo.png'%}" alt="site logo" id="hm__img__logo">
+                </a>
+                <nav id="hm__nav" class="hm__nav">
+                    <ul id="hm__nav__list">
+                        <li class="hm__nav__list__item">
+                            <a href="{% url 'store:home' %}" class="hm__nav__item__link">home</a>
+                        </li>
+                        <li class="hm__nav__list__item">
+                            <a href="" id="hm_nav_cat_outs" class="hm__nav__item__link">Categories <i class="fas fa-arrow-right"></i></a>
+                            {% if product_cats %}
+                            <ul id="hm_nav_cat_items" class="hm_nav_cat">
+                                {% for cat in product_cats%}
+                                <li class="hm_nav_cat_item">
+                                    <a href="#hm_b_suits" id="hm_nav_cat_item_link" class="hm_nav_cat_item_link">{{cat.name}}</a>
+                                </li>
+                                {%endfor%}
+                            </ul>
+                            {%else%}
+                            {%endif%}
+
+                        </li>
+                        <li class="hm__nav__list__item">
+                            <a href="#hm__footer__top__cont__info__div" class="hm__nav__item__link" id="hm__nav__contact_us">contact us</a>
+                        </li>
+                        <!-- <li class="hm__nav__list__item">
+                            <a href="#hm__about__us" class="hm__nav__item__link" id="hm__nav__aboutus">about us</a>
+                        </li> -->
+                        <!-- <li id="hm__nav__list__item">
+                            <a href="" id="hm__nav__item__link">policy</a>
+                        </li> -->
+                    </ul>
+                </nav>
+                <a href="" id="hm__menu__btn" class="hm__menu__btn"><i class="fas fa-bars"></i></a>
+            </article>

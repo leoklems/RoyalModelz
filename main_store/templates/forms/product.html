@@ -1,0 +1,40 @@
+{% extends 'staff/main.html' %}
+{% load static %}
+{% block title %}Add Product{% endblock %}
+
+{% block content %}
+    <main id="all__forms">
+        {% include 'staff/header.html' %}
+         <article id="form__registration">
+                <header>Add new product</header>
+                <form action="" id="sign__up">
+                     {% csrf_token %}
+                    <div class="signup__div">
+                        <input type="text" class="all__form__stuff" placeholder="name" name="name">
+                    </div>
+                    <div class="signup__div">
+                        <input type="text" class="all__form__stuff" placeholder="brand name" name="brand">
+                    </div>
+                    <div class="signup__div">
+                        <input type="text" class="all__form__stuff" placeholder="colors" name="colors">
+                    </div>
+                    <div class="signup__div">
+                        <input type="text" name="sizes" class="all__form__stuff" placeholder="sizes">
+                    </div>
+                    <div class="signup__div">
+                        <label for="signup__dp" id="signup__dp__label">Category</label>
+                        {{form.category}}
+                    </div>
+                    <div class="signup__div">
+                        <input type="text" class="all__form__stuff" placeholder="Normal price" name="price">
+                    </div>
+                    <div class="signup__div">
+                        <input type="text" class="all__form__stuff" placeholder="Discount price" name="discount_price">
+                    </div>
+                    <input type="submit" value="create account" id="signup__submit">
+
+                </form>
+            </article>
+    </main>
+{% endblock %}
+
