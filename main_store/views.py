@@ -263,14 +263,14 @@ class AddProduct(LoginRequiredMixin, CreateView):
         form.save()
 
         staff = Author.objects.get(user=self.request.user)
-        act = Activity(actor=staff, type='Add', action=f'Product added: {form.title}')
+        act = Activity(actor=staff, type='Add', action=f'Product added: {form.name}')
         act.save()
         # messages.success(self.request, 'Post was successfully added')
         return redirect('store:s_home')
 
     def form_invalid(self, form, *args, **kwargs):
         # print(self.request.POST)
-        # print(form.errors)
+        print(form.errors)
         # messages.success(self.request, 'Post was not added, ensure that you filled the form correctly')
         return render(self.request, 'forms/product.html', {'form': form})
 
@@ -305,7 +305,8 @@ class AddProductImage(LoginRequiredMixin, CreateView):
                 form.save()
                 print('done')
             except:
-                # form.save()
+                print('undone')
+                form.save()
                 pass
         # messages.success(self.request, 'Post category was successfully added')
         return redirect('store:product_images')
@@ -327,7 +328,7 @@ class UpdateProductImage(LoginRequiredMixin, UpdateView):
         # print(self.request.POST)
         form = form.save()
         staff = Author.objects.get(user=self.request.user)
-        act = Activity(actor=staff, type='Update', action=f'Post image category updated: {form.title}')
+        act = Activity(actor=staff, type='Update', action=f'Post image category updated: {form.product}')
         act.save()
         # messages.success(self.request, 'Post category was successfully updated')
         return redirect('content:s_home')
@@ -404,11 +405,14 @@ class AddSlide(LoginRequiredMixin, CreateView):
                         i.index += 1
                         i.save()
         else:
-            slides = Slide.objects.all()
-            d_max = [index.index for index in slides]
-            # print(d_max)
-            d_max = max(d_max)
-            form.index = d_max + 1
+            try:
+                slides = Slide.objects.all()
+                d_max = [index.index for index in slides]
+                # print(d_max)
+                d_max = max(d_max)
+                form.index = d_max + 1
+            except :
+                form.index = 0
         form.save()
 
         staff = Author.objects.get(user=self.request.user)

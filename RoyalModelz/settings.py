@@ -29,7 +29,7 @@ SECRET_KEY = 'django-insecure-4=_dxdblylt2+l-9pgq+vi#2a8=yn$i2zm5a#u#_x(zqt^ajs)
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['127.0.0.1', 'www.leoklemz.pythonanywhere.com', 'leoklemz.pythonanywhere.com']
 
 
 # Application definition
@@ -170,8 +170,8 @@ EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_HOST = 'smtp.mail.yahoo.com'
 EMAIL_USE_SSL = True
 EMAIL_PORT = '465'
-EMAIL_HOST_USER = 'leoklems@yahoo.com'
-EMAIL_HOST_PASSWORD = 'qzng pojk tlth aphe'
+EMAIL_HOST_USER = ''
+EMAIL_HOST_PASSWORD = ''
 DEFAULT_FROM_EMAIL = EMAIL_HOST_USER
 
 # Default primary key field type

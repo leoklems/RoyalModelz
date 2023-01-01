@@ -7,7 +7,7 @@
         {% include 'staff/header.html' %}
          <article id="form__registration">
                 <header>Add new product</header>
-                <form action="" id="sign__up">
+                <form action="" id="sign__up" method="post">
                      {% csrf_token %}
                     <div class="signup__div">
                         <input type="text" class="all__form__stuff" placeholder="name" name="name">
@@ -31,7 +31,7 @@
                     <div class="signup__div">
                         <input type="text" class="all__form__stuff" placeholder="Discount price" name="discount_price">
                     </div>
-                    <input type="submit" value="create account" id="signup__submit">
+                    <input type="submit" value="add" id="signup__submit">
 
                 </form>
             </article>

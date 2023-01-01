@@ -7,14 +7,15 @@
         {% include 'staff/header.html' %}
         {% include 'staff/navigation.html' %}
         <section id="gall__main">
-            {% if product_images %}
-            {%for p in products%}
+
             <article class=" gall__art__one__main ">
                 <header><span class="gall_art_sec_name">{{p.name}}</span>
                     <span class="gall_art_item_add_btn">
                         <a href="{% url 'store:add_product_img'%}" class="add_item_btn"><i class="fas fa-plus "></i> item</a>
                     </span>
                 </header>
+                {% if product_images %}
+                {%for p in products%}
                 <section class="gall__arts " id="gall__art__one ">
                     {%for img in product_images %}
                     {% if img.product.name == p.name %}
@@ -31,10 +32,10 @@
                     {%endif%}
                     {%endfor%}
                 </section>
+                {%endfor%}
+                {%else%}
+                {%endif%}
             </article>
-            {%endfor%}
-            {%else%}
-            {%endif%}
         </section>
     </main>
 {% endblock %}

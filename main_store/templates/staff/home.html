@@ -7,13 +7,14 @@
         {% include 'staff/header.html' %}
         {% include 'staff/navigation.html' %}
         <section id="gall__main" class="dit__pg">
-            {% if slides %}
+
             <article class=" gall__art__one__main ">
                 <header><span class="gall_art_sec_name">gallary one</span>
                     <span class="gall_art_item_add_btn">
                         <a href="{% url 'store:add_slide' %}" class="add_item_btn"><i class="fas fa-plus "></i> item</a>
                     </span>
                 </header>
+                {% if slides %}
                 <section class="gall__arts " id="gall__art__one ">
                     {% for s in slides %}
                     <div class="gall__art__img__div ">
@@ -33,18 +34,20 @@
                     </div>
                     {%endfor%}
                 </section>
+                {%else%}
+                {%endif%}
             </article>
-            {%else%}
-            {%endif%}
-            {% if products %}
-            {%for p_cat in product_cats%}
-            {% if p_cat.product_categories.count > 0 %}
+
             <article class=" gall__art__one__main ">
+                {%for p_cat in product_cats%}
                 <header><span class="gall_art_sec_name">{{p_cat.name}}</span>
                     <span class="gall_art_item_add_btn">
                         <a href="{% url 'store:add_product' %}" class="add_item_btn"><i class="fas fa-plus "></i> item</a>
                     </span>
                 </header>
+                {% if products %}
+
+                {% if p_cat.product_categories.count > 0 %}
                 <section class="gall__arts " id="gall__art__one ">
                     {%for p in products %}
                     {% if p.category == p_cat %}
@@ -72,19 +75,22 @@
                     {%endif%}
                     {%endfor%}
                 </section>
+                {%else%}
+                {%endif%}
+
+                {%else%}
+                {%endif%}
+                {%endfor%}
             </article>
-            {%else%}
-            {%endif%}
-            {%endfor%}
-            {%else%}
-            {%endif%}
-        {% if product_cats %}
+
+
             <article id="table__one">
                 <table>
                     <caption><span class="gall_art_sec_name">categories</span>
                     <span class="gall_art_item_add_btn">
                         <a href="{% url 'store:add_product_cat' %}" class="add_item_btn"><i class="fas fa-plus "></i> product category</a>
                     </span></caption>
+                    {% if product_cats %}
                     <tbody id="table__one__body">
                         <tr>
                             <th>s/n</th>
@@ -107,11 +113,12 @@
 
                         </tr>
                     </tbody>
+                    {%else%}
+                    {%endif%}
                 </table>
             </article>
 
-        {%else%}
-        {%endif%}
+
         </section>
     </main>
 {% endblock %}
