@@ -9,9 +9,9 @@
         <section id="gall__main" class="dit__pg">
 
             <article class=" gall__art__one__main ">
-                <header><span class="gall_art_sec_name">gallary one</span>
+                <header><span class="gall_art_sec_name">Slides</span>
                     <span class="gall_art_item_add_btn">
-                        <a href="{% url 'store:add_slide' %}" class="add_item_btn"><i class="fas fa-plus "></i> item</a>
+                        <a href="{% url 'store:add_slide' %}" class="add_item_btn"><i class="fas fa-plus "></i> slides</a>
                     </span>
                 </header>
                 {% if slides %}
@@ -20,12 +20,12 @@
                     <div class="gall__art__img__div ">
                         <img src="{{s.image.url}}" alt="photo image " class="gall__art__one__img ">
                         <div class="gall__art__one__img__desc ">
-                             <a href="{% url 'store:update_slide' s.id %}" class=""><i class="far fa-edit"></i><i class="fas fa-camera"></i></a>
+                             <a href="{% url 'store:update_slide' s.id %}" class="tbl__btn__edit"><i class="far fa-edit"></i><i class="fas fa-camera"></i></a>
                             {% if s.link %}
-                            <a href="" class=""><i class="far fa-edit"></i><i class="fas fa-anchor"></i></a>
+                            <a href="" class="tbl__btn__edit"><i class="far fa-edit"></i><i class="fas fa-anchor"></i></a>
                             {%else%}
                             {%endif%}
-                            <a href="{% url 'store:delete_slide' s.id %}" class=""><i class="fas fa-trash"></i></a>
+                            <a href="{% url 'store:delete_slide' s.id %}"  class="tbl__btn__delete "><i class="fas fa-trash"></i></a>
 <!--                            <a href=" " class="gall__art__img__one__name ">yellow touch</a>-->
 <!--                            <section class="gall__art__img__one__num "><a href=" " class="tbl__btn__delete ">-->
 <!--                                <i class="fas fa-trash "></i></a>-->
@@ -42,7 +42,7 @@
                 {%for p_cat in product_cats%}
                 <header><span class="gall_art_sec_name">{{p_cat.name}}</span>
                     <span class="gall_art_item_add_btn">
-                        <a href="{% url 'store:add_product' %}" class="add_item_btn"><i class="fas fa-plus "></i> item</a>
+                        <a href="{% url 'store:add_product' %}" class="add_item_btn"><i class="fas fa-plus "></i> products</a>
                     </span>
                 </header>
                 {% if products %}
@@ -59,13 +59,7 @@
                         {%endif%}
                         {%endfor%}
                         <div class="gall__art__one__img__desc">
-<!--                             <a href="" class="tbl__btn__edit"><i class="far fa-eye"></i><i class="fas fa-camera"></i></a>-->
-<!--                            {% if s.link %}-->
-<!--                            <a href="" class="tbl__btn__edit"><i class="far fa-edit"></i><i class="fas fa-anchor"></i></a>-->
-<!--                            {%else%}-->
-<!--                            {%endif%}-->
-<!--                            <a href="" class="tbl__btn__delete"><i class="fas fa-trash"></i></a>-->
-                            <a href="{% url 'store:staff_product_detail' p.product_id %}" class="gall__art__img__one__name "><i class="far fa-eye"></i></a>
+                            <a href="{% url 'store:staff_product_detail' p.product_id %}" class="gall__art__img__one__name tbl__btn__view"><i class="far fa-eye"></i></a>
                             <section class="gall__art__img__one__num "><a href="{% url 'store:delete_product' p.product_id %} " class="tbl__btn__delete ">
                                 <i class="fas fa-trash "></i></a>
                             </section>

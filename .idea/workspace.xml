@@ -1,14 +1,83 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="31f84268-3b43-4c9c-a48e-589d80352d4b" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+    <list default="true" id="31f84268-3b43-4c9c-a48e-589d80352d4b" name="Default Changelist" comment="improved initial admin display">
+      <change afterPath="$PROJECT_DIR$/main_store/static/assets/css/Bold/Argentum-Novus-Medium.ttf.woff" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/main_store/static/assets/css/header1/Negotiate-Free.ttf.woff" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/RoyalModelz/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/RoyalModelz/settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main_store/static/assets/css/Acens/Acens.ttf.eot" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/main_store/static/assets/css/Acens/Acens.ttf.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/main_store/static/assets/css/Acens/example.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/main_store/static/assets/css/Acens/images/bgtile.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/main_store/static/assets/css/Acens/images/button.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/main_store/static/assets/css/Acens/images/fontboxbottom.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/main_store/static/assets/css/Acens/images/fontboxtile.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/main_store/static/assets/css/Acens/images/fontboxtop.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/main_store/static/assets/css/Acens/images/foot.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/main_store/static/assets/css/Acens/images/foottile.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/main_store/static/assets/css/Acens/images/free.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/main_store/static/assets/css/Acens/images/headertile.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/main_store/static/assets/css/Acens/images/logo.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/main_store/static/assets/css/Acens/install-a-webfont.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/main_store/static/assets/css/Acens/webfonts.ffonts.net.htm" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/main_store/static/assets/css/Acens/webfonts.ffonts.net.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/main_store/static/assets/css/Bold/Agnella-Bold.ttf.eot" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/main_store/static/assets/css/Bold/Agnella-Bold.ttf.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/main_store/static/assets/css/Bold/Agnella-Bold.ttf.woff" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/main_store/static/assets/css/Bold/example.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/main_store/static/assets/css/Bold/images/bgtile.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/main_store/static/assets/css/Bold/images/button.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/main_store/static/assets/css/Bold/images/fontboxbottom.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/main_store/static/assets/css/Bold/images/fontboxtile.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/main_store/static/assets/css/Bold/images/fontboxtop.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/main_store/static/assets/css/Bold/images/foot.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/main_store/static/assets/css/Bold/images/foottile.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/main_store/static/assets/css/Bold/images/free.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/main_store/static/assets/css/Bold/images/headertile.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/main_store/static/assets/css/Bold/images/logo.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/main_store/static/assets/css/Bold/install-a-webfont.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/main_store/static/assets/css/Bold/webfonts.ffonts.net.htm" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/main_store/static/assets/css/Bold/webfonts.ffonts.net.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/main_store/static/assets/css/base/FranKleinBook.ttf.eot" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/main_store/static/assets/css/base/FranKleinBook.ttf.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/main_store/static/assets/css/base/example.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/main_store/static/assets/css/base/images/bgtile.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/main_store/static/assets/css/base/images/button.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/main_store/static/assets/css/base/images/fontboxbottom.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/main_store/static/assets/css/base/images/fontboxtile.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/main_store/static/assets/css/base/images/fontboxtop.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/main_store/static/assets/css/base/images/foot.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/main_store/static/assets/css/base/images/foottile.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/main_store/static/assets/css/base/images/free.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/main_store/static/assets/css/base/images/headertile.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/main_store/static/assets/css/base/images/logo.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/main_store/static/assets/css/base/install-a-webfont.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/main_store/static/assets/css/base/webfonts.ffonts.net.htm" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/main_store/static/assets/css/base/webfonts.ffonts.net.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/main_store/static/assets/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/main_store/static/assets/css/style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main_store/static/assets/css/style_admin.css" beforeDir="false" afterPath="$PROJECT_DIR$/main_store/static/assets/css/style_admin.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main_store/static/assets/js/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/main_store/static/assets/js/main.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main_store/templates/forms/post-cat.html" beforeDir="false" afterPath="$PROJECT_DIR$/main_store/templates/forms/post-cat.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main_store/templates/forms/product-brand-update.html" beforeDir="false" afterPath="$PROJECT_DIR$/main_store/templates/forms/product-brand-update.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main_store/templates/forms/product-color-update.html" beforeDir="false" afterPath="$PROJECT_DIR$/main_store/templates/forms/product-color-update.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main_store/templates/forms/product-image.html" beforeDir="false" afterPath="$PROJECT_DIR$/main_store/templates/forms/product-image.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main_store/templates/forms/product-price-update.html" beforeDir="false" afterPath="$PROJECT_DIR$/main_store/templates/forms/product-price-update.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main_store/templates/forms/product-size-update.html" beforeDir="false" afterPath="$PROJECT_DIR$/main_store/templates/forms/product-size-update.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main_store/templates/forms/product.html" beforeDir="false" afterPath="$PROJECT_DIR$/main_store/templates/forms/product.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main_store/templates/forms/product_cat_update.html" beforeDir="false" afterPath="$PROJECT_DIR$/main_store/templates/forms/product_cat_update.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main_store/templates/forms/product_discount_price_update.html" beforeDir="false" afterPath="$PROJECT_DIR$/main_store/templates/forms/product_discount_price_update.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main_store/templates/forms/product_image_update.html" beforeDir="false" afterPath="$PROJECT_DIR$/main_store/templates/forms/product_image_update.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main_store/templates/forms/product_name_update.html" beforeDir="false" afterPath="$PROJECT_DIR$/main_store/templates/forms/product_name_update.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main_store/templates/forms/slide.html" beforeDir="false" afterPath="$PROJECT_DIR$/main_store/templates/forms/slide.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main_store/templates/forms/update_product_cat.html" beforeDir="false" afterPath="$PROJECT_DIR$/main_store/templates/forms/update_product_cat.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main_store/templates/forms/update_slide.html" beforeDir="false" afterPath="$PROJECT_DIR$/main_store/templates/forms/update_slide.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main_store/templates/home.html" beforeDir="false" afterPath="$PROJECT_DIR$/main_store/templates/home.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main_store/templates/navigation.html" beforeDir="false" afterPath="$PROJECT_DIR$/main_store/templates/navigation.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main_store/templates/staff/home.html" beforeDir="false" afterPath="$PROJECT_DIR$/main_store/templates/staff/home.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main_store/templates/staff/navigation.html" beforeDir="false" afterPath="$PROJECT_DIR$/main_store/templates/staff/navigation.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main_store/templates/staff/product_detail.html" beforeDir="false" afterPath="$PROJECT_DIR$/main_store/templates/staff/product_detail.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main_store/templates/staff/product_images.html" beforeDir="false" afterPath="$PROJECT_DIR$/main_store/templates/staff/product_images.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main_store/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/main_store/views.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -44,14 +113,14 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../hakaton" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/main_store/static/assets/css" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Django_Projects\RoyalModelz\main_store\static\assets\css" />
       <recent name="C:\Django_Projects\RoyalModelz\main_store\static\assets\images" />
       <recent name="C:\Django_Projects\RoyalModelz\main_store\templates\staff" />
       <recent name="C:\Django_Projects\RoyalModelz\main_store\static\assets\js" />
-      <recent name="C:\Django_Projects\RoyalModelz\main_store\static\assets\css" />
       <recent name="C:\Django_Projects\RoyalModelz\main_store\templates" />
     </key>
   </component>
@@ -64,6 +133,14 @@
       <option name="presentableId" value="Default" />
       <updated>1671856766783</updated>
     </task>
+    <task id="LOCAL-00001" summary="improved initial admin display">
+      <created>1672546490145</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1672546490146</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -77,5 +154,9 @@
       </map>
     </option>
     <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="improved initial admin display" />
+    <option name="LAST_COMMIT_MESSAGE" value="improved initial admin display" />
   </component>
 </project>

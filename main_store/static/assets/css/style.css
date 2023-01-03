@@ -1,6 +1,6 @@
 @font-face {
-    font-family: 'base1';
-    src: url('fonts/alt/Negotiate-Free.ttf.woff') format('woff2');
+    font-family: 'header1';
+    src: url('header1/Negotiate-Free.ttf.woff') format('woff2');
 }
 
 @font-face {
@@ -10,7 +10,7 @@
 
 @font-face {
     font-family: 'Bold';
-    src: url('Bold/Agnella-Bold.ttf.woff') format('woff2');
+    src: url('Bold/Argentum-Novus-Medium.ttf.woff') format('woff2');
 }
 
 @font-face {
@@ -136,8 +136,23 @@ textarea {
     display: grid;
     gap: 5px;
     grid-template-columns: 1fr;
-    font-weight: 600;
-    text-transform: uppercase;
+    text-transform: capitalize;
+}
+
+.hm__nav__item__link {
+    padding-top: 5px;
+    border-bottom: 1px solid black;
+    display: flex;
+    justify-content: space-between;
+}
+
+.hm__nav__item__link i{
+    align-self: center;
+    padding-left: 5px;
+}
+
+.menu_triggered {
+    color: var(--primary);
 }
 
 #hm__menu__btn {
@@ -164,7 +179,7 @@ textarea {
 }
 
 .hm_slides_container {
-    display: flex;
+    display: grid;
     grid-template-rows: 1fr;
     overflow-x: auto;
     scroll-snap-type: x mandatory;
@@ -190,7 +205,8 @@ textarea {
     gap: 5px;
     grid-template-columns: repeat(8, 1fr);
     align-items: center;
-    /* background-color: var(--background-slide); */
+    grid-row: 1;
+    grid-column: 1/2;
 }
 
 
@@ -212,7 +228,7 @@ textarea {
 
 #hm__top__ad__img {
     width: 100%;
-    height: 206px;
+    height: 185px;
 }
 
 #hm_s_w_u_head {
@@ -249,21 +265,23 @@ textarea {
     display: grid;
     grid-template-rows: 1fr;
     grid-template-columns: 1fr 1fr;
+    grid-row: 1;
+    grid-column: 1/2;
 }
 
 .prev,
 .next {
     cursor: pointer;
     position: relative;
-    /* bottom: 50%; */
     padding: 16px;
-    color: var(--text-color2);
+    color: #80873a;
     font-weight: 600;
-    font-size: 18px;
+    font-size: 2em;
     transition: 0.6s ease;
     border-radius: 0 3px 3px 0;
     user-select: none;
     width: fit-content;
+    align-self: center;
 }
 
 .next {
@@ -307,13 +325,10 @@ textarea {
 }
 
 .hm_main_body_sec_head {
-    font-weight: 600;
     font-size: 1.5em;
     font-family: 'Acens';
     border-bottom: 1px solid black;
-    width: -webkit-fill-available;
     padding: 5px;
-    background: #c49564;
 }
 
 .hm_main_body_sec_body {
@@ -335,7 +350,6 @@ textarea {
     grid-template-columns: 1fr;
     grid-template-rows: 1fr 5fr 1fr;
     align-items: center;
-    padding: 10px;
     box-shadow: 0 4px 8px 0 rgb(0 0 0 / 20%), 0 6px 20px 0 rgb(0 0 0 / 19%);
 }
 
@@ -351,7 +365,7 @@ textarea {
 
 .hm_main_body_art_img {
     width: 100%;
-    height: 160px;
+    aspect-ratio: 1;
 }
 
 .hm_main_body_art_footer {
@@ -499,7 +513,7 @@ textarea {
         /* width: 90vw; */
     }
     #hm__top__ad__img {
-        height: 366px;
+        height: 291px;
     }
     #hm_slide_w_up {
         grid-column: 1/6;
@@ -516,9 +530,7 @@ textarea {
         grid-template-rows: 1fr 8fr 1fr;
         width: 26vw;
     }
-    .hm_main_body_art_img {
-        height: 146px;
-    }
+
     .hm_main_body_art_footer .price {
         justify-self: unset;
     }
@@ -535,6 +547,10 @@ textarea {
         padding: 0 25px;
         align-self: self-start;
     }
+    .prev,
+    .next {
+        font-size: 3em;
+    }
 }
 
 @media (min-width: 768px) {
@@ -543,7 +559,8 @@ textarea {
         font-size: 1.3rem;
     }
     #hm_menu_bar {
-        padding: 30px 120px;
+        justify-items: stretch;
+        padding: 10px 120px;
     }
     #hm__site__logo {
         grid-column: 1/2;
@@ -564,20 +581,23 @@ textarea {
         z-index: unset;
     }
     nav.hm__nav {
-        grid-column: 3/9;
+        grid-column: 6/9;
         display: grid;
         gap: 5px;
         grid-template-columns: 1fr;
         align-items: center;
-        text-transform: uppercase;
-        font-weight: 600;
     }
     #hm__nav__list {
         gap: 5px;
-        grid-template-columns: repeat(4, 1fr);
+        grid-template-columns: 1fr 2fr 2fr;
         align-items: center;
         justify-items: center;
     }
+    .hm__nav__item__link {
+    padding-top: unset;
+    border-bottom: unset;
+    font-family: 'Bold';
+}
     .hm_nav_cat_triggered {
         position: absolute;
         padding: 10px;
@@ -586,7 +606,7 @@ textarea {
         padding-left: 120px;
     }
     #hm__top__ad__img {
-        height: 815px;
+        height: 600px;
     }
     #hm_main_body {
         padding: 25px 120px;
@@ -603,6 +623,10 @@ textarea {
     }
     #hm__footer {
         padding: 30px 120px;
+    }
+    .prev,
+    .next {
+        font-size: 5em;
     }
 }
 
@@ -655,9 +679,5 @@ textarea {
     /* desktops */
     #dit_body {
         padding: 30px 120px;
-    }
-    .hm_main_body_art_img {
-        width: 100%;
-        height: 239px;
     }
 }

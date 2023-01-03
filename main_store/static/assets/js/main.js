@@ -5,12 +5,14 @@ $(document).ready(function() {
             $('.fa-bars').toggleClass('fa-times');
             $('.hm__menu__btn_link').toggleClass('hm__menu__btn__trig');
 
+            $('#hm_nav_cat_outs').removeClass('menu_triggered');
+            $('#hm_nav_cat_items').removeClass('hm_nav_cat_triggered');
         })
         // $("#hm_nav_cat_outs").hover(function(event) {
     $("#hm_nav_cat_outs").click(function(event) {
         event.preventDefault();
         $('.hm_nav_cat').toggleClass('hm_nav_cat_triggered');
-        // $('.fa-bars').toggleClass('fa-times');
+        $('#hm_nav_cat_outs').toggleClass('menu_triggered');
         // $('.fa-angle-right').toggleClass('fa-angle-down');
         // if ($(this).children[0].attr('class') == '.fas fa-angle-right') {
         //     $(this.children[0]).attr('class', '.fas fa-angle-down');
@@ -18,11 +20,11 @@ $(document).ready(function() {
         //     $(this.children[0]).attr('class', '.fas fa-angle-right');
         // }
 
-        if ($('#hm_nav_cat_outs i').attr('class') == 'fas fa-arrow-right') {
-            $('#hm_nav_cat_outs i').attr('class', 'fas fa-arrow-down');
-        } else {
-            $('#hm_nav_cat_outs i').attr('class', 'fas fa-arrow-right');
-        }
+        // if ($('#hm_nav_cat_outs i').attr('class') == 'fas fa-plus') {
+        //     $('#hm_nav_cat_outs i').attr('class', 'fas fa-minus');
+        // } else {
+        //     $('#hm_nav_cat_outs i').attr('class', 'fas fa-plus');
+        // }
 
     })
     $("#hm_nav_cat_items").click(function(event) {
@@ -71,7 +73,7 @@ function plusSlides(n) {
     let i;
     let slides = document.getElementsByClassName("mySlides");
     for (i = 0; i < slides.length; i++) {
-        slides[i].style.left = "unset";
+        slides[i].style.display = "none";
     }
     if (n >= slides.length) {
         slideIndex = 1;
@@ -88,7 +90,7 @@ function plusSlides(n) {
     if (slideIndex > slides.length) {
         slideIndex = 1;
     }
-    slides[slideIndex - 1].style.left = 0;
+    slides[slideIndex - 1].style.display = "grid";
     // showSlides();
 
 }

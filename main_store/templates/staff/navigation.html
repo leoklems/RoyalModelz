@@ -13,18 +13,26 @@
         <ul>
             <li class="hm__nav__item">
                 <a href="{% url 'store:s_home' %}" class="hm__nav__icon">
-                    <i class="fas fa-home"></i><span class="hm__nav__cont">Home</span>
+                    <span class="hm__nav__icon ">
+                        <i class="fas fa-home"></i>
+                    </span>
+                    <span class="hm__nav__cont">Home</span>
                 </a>
             </li>
             <li class="hm__nav__item ">
                 <a href="{% url 'store:product_images' %}" class="hm__nav__link ">
-                    <span class="hm__nav__icon "><i class="fas fa-code "></i>
-                    </span><span class="hm__nav__cont ">Product Images</span>
+                    <span class="hm__nav__icon ">
+                        <i class="fas fa-camera "></i>
+                    </span>
+                    <span class="hm__nav__cont ">Product Images</span>
                 </a>
             </li>
             <li class="hm__nav__item ">
                 <a href="{% url 'store:logout' %}" class="hm__nav__link ">
-                    <span class="hm__nav__icon "><i class="fas fa-camera "></i></span><span class="hm__nav__cont ">Logout</span>
+                    <span class="hm__nav__icon ">
+                        <i class="fas fa-sign-out-alt "></i>
+                    </span>
+                    <span class="hm__nav__cont ">Logout</span>
                 </a>
             </li>
 <!--            <li class="hm__nav__item ">-->

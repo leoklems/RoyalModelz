@@ -19,8 +19,8 @@
                             </summary>
                             <p>
                                 <div class="table__ctrl__btns">
-                                    <a href="{% url 'store:update_product_image' img.id %}" class="tbl__btn__edit"><i class="far fa-edit"></i></a>
-                                    <a href="{% url 'store:delete_product_img' img.id %}" class="tbl__btn__delete"><i class="fas fa-trash"></i></a>
+                                    <a href="{% url 'store:update_product_image' img.id %}" class="tbl__btn__edit__b"><i class="far fa-edit"></i></a>
+                                    <a href="{% url 'store:delete_product_img' img.id %}" class="tbl__btn__delete__b"><i class="fas fa-trash"></i></a>
                                 </div>
                             <p>
                         </details>
@@ -36,9 +36,8 @@
                                 <th>Name</th>
                                 <th>{{object.name}}</th>
                                 <th>
-                                    <div class="table__ctrl__btns">
+                                    <div class="table__ctrl__btns2">
                                         <a href="{% url 'store:update_product_name' object.product_id %}" class="tbl__btn__edit"><i class="far fa-edit"></i></a>
-                                        <a href="" class="tbl__btn__delete"><i class="fas fa-trash"></i></a>
                                     </div>
                                 </th>
                             </tr>
@@ -46,9 +45,8 @@
                                 <td>Category </td>
                                 <td>{{object.category}}</td>
                                 <td>
-                                    <div class="table__ctrl__btns">
+                                    <div class="table__ctrl__btns2">
                                         <a href="{% url 'store:update_product_cat' object.product_id %}" class="tbl__btn__edit"><i class="far fa-edit"></i></a>
-                                        <a href="" class="tbl__btn__delete"><i class="fas fa-trash"></i></a>
                                     </div>
                                 </td>
                             </tr>
@@ -56,9 +54,8 @@
                                 <td>Brand </td>
                                 <td>{{object.brand}}</td>
                                 <td>
-                                    <div class="table__ctrl__btns">
+                                    <div class="table__ctrl__btns2">
                                         <a href="{% url 'store:update_product_brand' object.product_id %}" class="tbl__btn__edit"><i class="far fa-edit"></i></a>
-                                        <a href="" class="tbl__btn__delete"><i class="fas fa-trash"></i></a>
                                     </div>
                                 </td>
                             </tr>
@@ -66,9 +63,8 @@
                                 <td>colors</td>
                                 <td>{{object.colors}}</td>
                                 <td>
-                                    <div class="table__ctrl__btns">
+                                    <div class="table__ctrl__btns2">
                                         <a href="{% url 'store:update_product_colors' object.product_id %}" class="tbl__btn__edit"><i class="far fa-edit"></i></a>
-                                        <a href="" class="tbl__btn__delete"><i class="fas fa-trash"></i></a>
                                     </div>
                                 </td>
                             </tr>
@@ -76,9 +72,8 @@
                                 <td>sizes</td>
                                 <td>{{object.sizes}}</td>
                                 <td>
-                                    <div class="table__ctrl__btns">
+                                    <div class="table__ctrl__btns2">
                                         <a href="{% url 'store:update_product_sizes' object.product_id %}" class="tbl__btn__edit"><i class="far fa-edit"></i></a>
-                                        <a href="" class="tbl__btn__delete"><i class="fas fa-trash"></i></a>
                                     </div>
                                 </td>
                             </tr>
@@ -86,9 +81,8 @@
                                 <td>Price</td>
                                 <td>&#8358; {{object.price}}</td>
                                 <td>
-                                    <div class="table__ctrl__btns">
+                                    <div class="table__ctrl__btns2">
                                         <a href="{% url 'store:update_product_price' object.product_id %}" class="tbl__btn__edit"><i class="far fa-edit"></i></a>
-                                        <a href="" class="tbl__btn__delete"><i class="fas fa-trash"></i></a>
                                     </div>
                                 </td>
                             </tr>
@@ -96,9 +90,8 @@
                                 <td>Discount price</td>
                                 <td>{% if object.discount_price %}&#8358; {{object.discount_price}}{%else%} - {%endif%}</td>
                                 <td>
-                                    <div class="table__ctrl__btns">
+                                    <div class="table__ctrl__btns2">
                                         <a href="{% url 'store:update_product_discount_price' object.product_id %}" class="tbl__btn__edit"><i class="far fa-edit"></i></a>
-                                        <a href="" class="tbl__btn__delete"><i class="fas fa-trash"></i></a>
                                     </div>
                                 </td>
                             </tr>
