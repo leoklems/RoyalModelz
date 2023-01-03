@@ -30,7 +30,7 @@ SECRET_KEY = 'django-insecure-4=_dxdblylt2+l-9pgq+vi#2a8=yn$i2zm5a#u#_x(zqt^ajs)
 DEBUG = True
 
 ALLOWED_HOSTS = ['127.0.0.1', 'www.leoklemz.pythonanywhere.com', 'leoklemz.pythonanywhere.com',
-                 'www.royalmodelz.com', 'royalmodelz.com']
+                 'www.royalmodelz.com', 'royalmodelz.com', '18.234.162.125']
 
 
 # Application definition
