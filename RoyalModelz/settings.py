@@ -29,7 +29,8 @@ SECRET_KEY = 'django-insecure-4=_dxdblylt2+l-9pgq+vi#2a8=yn$i2zm5a#u#_x(zqt^ajs)
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['127.0.0.1', 'www.leoklemz.pythonanywhere.com', 'leoklemz.pythonanywhere.com']
+ALLOWED_HOSTS = ['127.0.0.1', 'www.leoklemz.pythonanywhere.com', 'leoklemz.pythonanywhere.com',
+                 'www.royalmodelz.com', 'royalmodelz.com']
 
 
 # Application definition
@@ -94,28 +95,28 @@ WSGI_APPLICATION = 'RoyalModelz.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'RoyalModelz',
-        'USER': 'root',
-        'PASSWORD': '',
-        'HOST': 'localhost',
-        'PORT': '3306',
-        'OPTIONS': {
-                    # 'init_command': "SET sql_mode='STRICT_TRANS_TABLES'",
-                    # 'charset': 'utf8mb4',
-                    # 'read_default_file': '/opt/lampp/etc/my.cnf',
-        }
-    }
-}
-
 # DATABASES = {
-#     "default": {
-#         "ENGINE": "django.db.backends.sqlite3",
-#         "NAME": BASE_DIR / "db.sqlite3",
+#     'default': {
+#         'ENGINE': 'django.db.backends.mysql',
+#         'NAME': 'RoyalModelz',
+#         'USER': 'root',
+#         'PASSWORD': '',
+#         'HOST': 'localhost',
+#         'PORT': '3306',
+#         'OPTIONS': {
+#                     # 'init_command': "SET sql_mode='STRICT_TRANS_TABLES'",
+#                     # 'charset': 'utf8mb4',
+#                     # 'read_default_file': '/opt/lampp/etc/my.cnf',
+#         }
 #     }
 # }
+
+DATABASES = {
+    "default": {
+        "ENGINE": "django.db.backends.sqlite3",
+        "NAME": BASE_DIR / "db.sqlite3",
+    }
+}
 
 db_from_env = dj_database_url.config(conn_max_age=500)
 DATABASES['default'].update(db_from_env)

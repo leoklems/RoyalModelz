@@ -307,7 +307,8 @@ class AddProductImage(LoginRequiredMixin, CreateView):
             except:
                 print('undone')
                 form.save()
-                pass
+        else:
+            form.save()
         # messages.success(self.request, 'Post category was successfully added')
         return redirect('store:product_images')
 
