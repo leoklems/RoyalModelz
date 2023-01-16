@@ -399,7 +399,10 @@ class AddSlide(LoginRequiredMixin, CreateView):
         # print('index is :',form.index)
         if form.index is not None:
             slides = Slide.objects.all()
-            d_max = max([ind.index for ind in slides])
+            if len(slides) > 0:
+                d_max = max([ind.index for ind in slides])
+            else:
+                d_max = 0
             if form.index < d_max:
                 for i in slides:
                     if i.index >= form.index:

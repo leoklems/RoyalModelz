@@ -20,10 +20,13 @@
                             </div>
                         {%endif%}
                     {%endfor%}
+                    {% if slides.count > 1 %}
                     <div class="hm__body__prev__next__slide">
                         <a class="prev" onclick="plusSlides(-1)">&#10094</a>
                         <a class="next" onclick="plusSlides(1)">&#10095</a>
                     </div>
+                    {%else%}
+                    {%endif%}
                 </div>
             </article>
             {%else%}
