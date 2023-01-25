@@ -3,6 +3,7 @@ from django.contrib.auth.models import AbstractUser
 
 
 # Create your models here.
+from django.urls import reverse
 
 
 class User(AbstractUser):
@@ -84,6 +85,7 @@ class Product(models.Model):
                                  blank=True, null=True, related_name="product_categories")
     author = models.ForeignKey(Author, related_name='product_author', on_delete=models.CASCADE, null=True, blank=True)
     product_id = models.SlugField(max_length=20, null=True, blank=True)
+    description = models.TextField(max_length=1000, null=True, blank=True)
     price = models.FloatField(null=True, blank=True)
     discount_price = models.FloatField(null=True, blank=True)
     date_added = models.DateTimeField(auto_now_add=True)
@@ -111,3 +113,18 @@ class ProductImage(models.Model):
 
     def __str__(self):
         return f"img - {self.product}"
+
+
+class ProductOrder(models.Model):
+    email = models.EmailField(max_length=50, blank=True, null=True,)
+    product = models.ForeignKey(Product, on_delete=models.CASCADE,
+                                 blank=True, null=True, related_name="product_order")
+    phone_number = models.CharField(max_length=50, null=True, blank=True)
+    complete = models.BooleanField(default=False)
+    date_added = models.DateTimeField(auto_now_add=True)
+
+    def get_follow_url(self):
+        return reverse("store:order_product", kwargs={"pid": self.product.product_id})
+
+    def __str__(self):
+        return f"{self.product} - {self.pk}"

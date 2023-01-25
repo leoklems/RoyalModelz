@@ -1,0 +1,52 @@
+{% extends 'staff/main.html' %}
+{% load static %}
+{% block title %}Orders{% endblock %}
+
+{% block content %}
+    <main id="gall__main__main">
+        {% include 'staff/header.html' %}
+        {% include 'staff/navigation.html' %}
+        <section id="gall__main" class="dit__pg">
+
+            <article id="table__one">
+                <table>
+                    <caption><span class="gall_art_sec_name">orders</span>
+                    </caption>
+                    {% if orders %}
+                    <tbody id="table__one__body">
+                        <tr>
+<!--                            <th>s/n</th>-->
+                            <th>phone</th>
+                            <th>email</th>
+                            <th>product</th>
+                            <th>status</th>
+                        </tr>
+                        <tr>
+                            {%for order in orders%}
+<!--                            <td>{{forloop.counter}}</td>-->
+                            <td>{{order.phone_number}}</td>
+                            <td>{{order.email}}</td>
+                            <td>{{order.product}}</td>
+                            <td>
+                                <div class="table__ctrl__btns">
+                                    {%if order.complete %}
+                                    <a href="{% url 'store:update_product_order_status' order.id %}"
+                                       class="tbl__btn__edit"><i class="fas fa-check-circle"></i></a>
+                                    {%else%}
+                                    <a href="{% url 'store:update_product_order_status' order.id %}"
+                                       class="tbl__btn__edit"><i class="far fa-check-circle"></i></a>
+                                    {%endif%}
+                                </div>
+                            </td>
+                            {%endfor%}
+
+                        </tr>
+                    </tbody>
+                    {%else%}
+                    {%endif%}
+                </table>
+            </article>
+
+        </section>
+    </main>
+{% endblock %}

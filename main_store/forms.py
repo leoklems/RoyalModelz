@@ -196,18 +196,33 @@ class ProductDiscountPriceChangeForm(ModelForm):
         }
 
 
+class ProductDescriptionChangeForm(ModelForm):
+    class Meta:
+        model = Product
+        fields = ['description']
+        widgets = {
+            'description': Select(attrs={
+                'class': 'form-control',
+            }),
+
+        }
+
+
 class ProductProductImageChangeForm(ModelForm):
     class Meta:
         model = ProductImage
         field = '__all__'
         exclude = ['date_added']
-        # widgets = {
-        #     'product': SelectMultiple(attrs={
-        #         'value': '{{object.product_images.name}}',
-        #     }),
-        #     'lead': SelectMultiple(attrs={
-        #         'value': '{{object.lead}}',
-        #     }),
-        #
-        # }
 
+
+class ProductOrderForm(ModelForm):
+    class Meta:
+        model = ProductOrder
+        field = '__all__'
+        exclude = ['date_added', 'complete', 'product']
+
+
+class ProductOrderStatusChangeForm(ModelForm):
+    class Meta:
+        model = ProductOrder
+        fields = ['complete']

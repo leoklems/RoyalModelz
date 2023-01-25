@@ -5,6 +5,7 @@
                 <a href="{% url 'store:home' %}" id="hm__site__logo">
                     <img src="{% static 'assets/images/logo.png'%}" alt="site logo" id="hm__img__logo">
                 </a>
+                <a id="hm__header__dail" href="tel:+234 809 349 0689"><i class="fas fa-phone"></i> call us 24/7</a>
                 <nav id="hm__nav" class="hm__nav">
                     <ul id="hm__nav__list">
                         <li class="hm__nav__list__item">
@@ -16,7 +17,7 @@
                             <ul id="hm_nav_cat_items" class="hm_nav_cat">
                                 {% for cat in product_cats%}
                                 <li class="hm_nav_cat_item">
-                                    <a href="#hm_b_suits" id="hm_nav_cat_item_link" class="hm_nav_cat_item_link">{{cat.name}}</a>
+                                    <a href="#hm_b_{{cat.name}}" id="hm_nav_cat_item_link" class="hm_nav_cat_item_link">{{cat.name}}</a>
                                 </li>
                                 {%endfor%}
                             </ul>

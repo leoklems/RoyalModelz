@@ -20,13 +20,13 @@
                             </div>
                         {%endif%}
                     {%endfor%}
-                    {% if slides.count > 1 %}
-                    <div class="hm__body__prev__next__slide">
-                        <a class="prev" onclick="plusSlides(-1)">&#10094</a>
-                        <a class="next" onclick="plusSlides(1)">&#10095</a>
-                    </div>
-                    {%else%}
-                    {%endif%}
+<!--                    {% if slides.count > 1 %}-->
+<!--                    <div class="hm__body__prev__next__slide">-->
+<!--                        <a class="prev" onclick="plusSlides(-1)">&#10094</a>-->
+<!--                        <a class="next" onclick="plusSlides(1)">&#10095</a>-->
+<!--                    </div>-->
+<!--                    {%else%}-->
+<!--                    {%endif%}-->
                 </div>
             </article>
             {%else%}
@@ -36,7 +36,7 @@
             {% if products %}
                 {%for p_cat in product_cats%}
                 {% if p_cat.product_categories.count > 0 %}
-                <section class="hm_main_body_sec" id="hm_b_suits">
+                <section class="hm_main_body_sec" id="hm_b_{{p_cat.name}}">
                 <header class="hm_main_body_sec_head">{{p_cat.name}}</header>
                 <div class="hm_main_body_sec_body">
                     {%for p in products %}

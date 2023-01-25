@@ -1,21 +1,22 @@
 {% extends 'staff/main.html' %}
 {% load static %}
-{% block title %}Add Product{% endblock %}
+{% block title %}Update {{object.name}} Status{% endblock %}
 
 {% block content %}
     <main id="all__forms">
         {% include 'staff/header.html' %}
         <section id="forms__sec" class="mini_forms__sec">
          <article id="form__registration">
-                <header>Add new product category</header>
+                <header>complete {{object.name}} order</header>
                 <form action="" id="sign__up" method="post">
                      {% csrf_token %}
-                    <div class="signup__div" id="signup__username__div">
-                        <input type="text" id="signup__username" placeholder="name" name="name">
+                    <div class="signup__div">
+                        <label for="signup__dp" id="signup__dp__label">Complete</label>
+                        {{form.complete}}
                     </div>
-                    <div id="form_ctrl_btns_add" class="form_ctrl_btns">
+                    <div id="form_ctrl_btns" class="form_ctrl_btns">
                         <a href="{% url 'store:s_home'%}" class="form_ctrl_btn_back">Cancle</a>
-                        <input type="submit" value="add" id="add__submit">
+                        <input type="submit" value="Yes"  class="form_ctrl_btn_edit">
                     </div>
 
                 </form>

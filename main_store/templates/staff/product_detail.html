@@ -95,6 +95,15 @@
                                     </div>
                                 </td>
                             </tr>
+                            <tr>
+                                <td>Product description</td>
+                                <td>{{object.description}}</td>
+                                <td>
+                                    <div class="table__ctrl__btns2">
+                                        <a href="{% url 'store:update_product_description' object.product_id %}" class="tbl__btn__edit"><i class="far fa-edit"></i></a>
+                                    </div>
+                                </td>
+                            </tr>
                         </tbody>
                     </table>
                 </section>

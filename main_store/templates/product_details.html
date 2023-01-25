@@ -5,7 +5,7 @@
 {% block content %}
     <main id="hm_main">
         <header id="hm_top_h">
-            {% include 'navigation.html' %}
+            {% include 'navigation2.html' %}
         </header>
         <article id="dit_body">
             <header id="dit_body_head">
@@ -15,6 +15,7 @@
                     {%endfor%}
                 </div>
             </header>
+            <a href="{% url 'store:order_product' object.product_id%}" class="order_btn">Order</a>
             <section id="dit_body_dit">
                 <header class="dit_body_dit_name">{{object.category}}
 <!--                    <span class="badge">new</span>-->
@@ -39,6 +40,10 @@
                     {%else%}
                     <span class="dit_body_disc_price">&#8358; {{object.price}}</span>
                     {%endif%}
+                </div>
+                <div class="dit_body_dit_size">
+                    <span class="dit_body_size_cap _cap">Description :</span>
+                    <span class="dit_body_desc">{{object.description}}</span>
                 </div>
             </section>
         </article>

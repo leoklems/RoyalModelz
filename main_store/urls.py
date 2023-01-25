@@ -49,6 +49,11 @@ urlpatterns = [
     path('update-product-price/<product_id>/', ProductPriceUpdate.as_view(), name='update_product_price'),
     path('update-product-discount-price/<product_id>/', ProductDiscountPriceUpdate.as_view(),
          name='update_product_discount_price'),
+    path('update-product-price-description/<product_id>/',
+         ProductDescriptionUpdate.as_view(), name='update_product_description'),
     path('update-product-image-change/<pk>/', ProductProductImageUpdate.as_view(),
          name='update_product_image'),
+    path('<pid>/order-product/', order_product, name='order_product'),
+    path('update-product-order-status/<pk>/', ProductOrderStatusUpdate.as_view(), name='update_product_order_status'),
+    path('orders/', AdminOrders.as_view(), name='admin_orders'),
 ]

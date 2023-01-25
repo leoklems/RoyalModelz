@@ -2,7 +2,7 @@ from random import randint
 from time import timezone
 
 from django.core.paginator import Paginator
-from django.http import JsonResponse, FileResponse, HttpResponse
+from django.http import JsonResponse, FileResponse, HttpResponse, HttpResponseRedirect
 from django.contrib.auth.models import User
 from django.shortcuts import render, get_object_or_404, redirect
 from django.template.loader import render_to_string
@@ -105,6 +105,7 @@ class AdminHome(LoginRequiredMixin, View):
         slides = Slide.objects.all()
         staff = Author.objects.all()
         product_images = ProductImage.objects.filter(lead=True)
+        orders = ProductOrder.objects.filter(complete=False)[:9]
 
         context = {
             'products': products,
@@ -112,6 +113,7 @@ class AdminHome(LoginRequiredMixin, View):
             'slides': slides,
             'staff': staff,
             'product_images': product_images,
+            'orders': orders,
         }
 
         return render(self.request, 'staff/home.html', context)
@@ -266,7 +268,10 @@ class AddProduct(LoginRequiredMixin, CreateView):
         act = Activity(actor=staff, type='Add', action=f'Product added: {form.name}')
         act.save()
         # messages.success(self.request, 'Post was successfully added')
-        return redirect('store:s_home')
+        # return redirect('store:s_home')
+        product = Product.objects.get(product_id=form.product_id)
+
+        return HttpResponseRedirect(reverse('store:staff_product_detail', kwargs={'product_id': product.product_id}))
 
     def form_invalid(self, form, *args, **kwargs):
         # print(self.request.POST)
@@ -613,6 +618,21 @@ class ProductDiscountPriceUpdate(LoginRequiredMixin, UpdateView):
         return reverse('store:staff_product_detail', kwargs={'product_id': self.object.product_id})
 
 
+class ProductDescriptionUpdate(LoginRequiredMixin, UpdateView):
+
+    model = Product
+    form_class = ProductDescriptionChangeForm
+    template_name = 'forms/product_description_update.html'
+    slug_field = 'product_id'
+    slug_url_kwarg = 'product_id'
+
+    def get_success_url(self):
+        staff = Author.objects.get(user=self.request.user)
+        act = Activity(actor=staff, type='Update', action=f'Product description updated for {self.object}')
+        act.save()
+        return reverse('store:staff_product_detail', kwargs={'product_id': self.object.product_id})
+
+
 class ProductProductImageUpdate(LoginRequiredMixin, UpdateView):
 
     model = ProductImage
@@ -645,3 +665,48 @@ class ProductProductImageUpdate(LoginRequiredMixin, UpdateView):
 
     # def get_success_url(self):
     #     return reverse('store:staff_product_detail', kwargs={'product_id': self.object.product_id})
+
+
+def order_product(request, pid, *args, **kwargs):
+    product = Product.objects.get(product_id=pid)
+    if request.method == "POST":
+        form = ProductOrderForm(request.POST)
+        if form.is_valid():
+            order = form.save(commit=False)
+            order.product = product
+            order = form.save()
+
+            messages.success(request, 'Order has been place for ' + product.name)
+
+            return HttpResponseRedirect(reverse('store:product', kwargs={'product_id': product.product_id}))
+        # else:
+        #     print(form.errors)
+    else:
+        form = ProductOrderForm(request.POST)
+        return render(request, 'order_product.html', {'product': product})
+
+
+class ProductOrderStatusUpdate(LoginRequiredMixin, UpdateView):
+
+    model = ProductOrder
+    form_class = ProductOrderStatusChangeForm
+    template_name = 'forms/product_order_status_update.html'
+    success_url = reverse_lazy('store:s_home')
+
+    def get_success_url(self):
+        staff = Author.objects.get(user=self.request.user)
+        act = Activity(actor=staff, type='Update', action=f'Product order status updated for {self.object}')
+        act.save()
+        return reverse('store:s_home')
+
+
+class AdminOrders(LoginRequiredMixin, View):
+
+    def get(self, *args, **kwargs):
+        orders = ProductOrder.objects.all()
+
+        context = {
+            'orders': orders,
+        }
+
+        return render(self.request, 'staff/orders.html', context)

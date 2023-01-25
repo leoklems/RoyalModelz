@@ -452,6 +452,7 @@ a.hm__nav__link:active {
     .hm__nav__cont {
         line-height: 1em;
         text-transform: capitalize;
+        font-size: 0.9em;
     }
     #hm__body {
         display: grid;
@@ -666,6 +667,7 @@ a.hm__nav__link:active {
         display: flex;
         flex-flow: column wrap;
     }
+
     .hm__data__top header,
     #cal header {
         padding: 10px;
@@ -971,7 +973,7 @@ input::placeholder {
     display: grid;
     gap: 10px 10px;
     grid-template-columns: 1fr;
-    grid-template-rows: repeat(9, 1fr);
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 3fr 1fr;
     padding: 25px;
 }
 
@@ -992,6 +994,13 @@ input::placeholder {
     grid-column: 1/2;
     border: none;
     background-color: unset;
+}
+textarea.all__form__stuff  {
+    border: 1px solid;
+}
+
+.text_area {
+    grid-row: 8/10;
 }
 
 #signup__email {
@@ -1119,6 +1128,10 @@ input::placeholder {
     padding: 25px;
 }
 
+.order_form #login {
+    grid-template-columns: 1fr;
+}
+
 #form__login__email__label,
 #form__login__pwrd__label {
     grid-column: 1/4;
@@ -1133,6 +1146,11 @@ input::placeholder {
     border-bottom: 1px solid;
     background-color: unset;
     padding: 10px 20px;
+}
+
+.order_form #form__login__email,
+.order_form #form__login__pwrd {
+    grid-column: unset;
 }
 
 #form__login__email__label,
@@ -1166,6 +1184,10 @@ input::placeholder {
     color: white;
     border: none;
     padding: 12px;
+}
+
+.form_ctrl_btns #form__login__submit {
+    grid-column: unset;
 }
 
 #login__signup {
@@ -1382,6 +1404,7 @@ td {
     display: grid;
     /* gap: 10px; */
     grid-template-columns: 1fr;
+    overflow-x: auto;
 }
 
 #table__one__body tr {
@@ -1528,6 +1551,8 @@ td {
     color: white;
     border: none;
     text-align: center;
+    display: grid;
+    align-items: center;
 }
 
 .form_ctrl_btn_del {
@@ -1585,7 +1610,6 @@ td {
     border: none;
 }
 #all__forms #add__submit {
-    grid-row: 9/10;
     text-transform: uppercase;
     background-color: rgb(151 172 231);
     color: white;
@@ -1610,9 +1634,20 @@ td {
     border: none;
 }
 
+#all__forms #form_ctrl_btns_add {
+    text-transform: uppercase;
+    color: white;
+    border: none;
+}
+
 .form__cat__item {
     border: none;
 }
+
+.front_form {
+    margin-top: 100px;
+}
+
 
 
 @media (min-width: 768px) {

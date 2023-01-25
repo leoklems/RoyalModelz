@@ -98,16 +98,29 @@ textarea {
 #hm_menu_bar {
     display: grid;
     gap: 5px;
-    grid-template-columns: 5fr 2fr;
+    grid-template-columns: 2fr 3fr 2fr;
     padding: 25px;
     align-items: center;
     justify-items: center;
+    position: fixed;
+    z-index: 1;
 }
 
 #hm__img__logo {
-    width: 20%;
+    width: 35%;
     position: relative;
     z-index: 3;
+}
+
+#hm__header__dail {
+    background-color: var(--primary);
+    border-radius: 5px;
+    color: var(--dates);
+    padding: 5px;
+    width: fit-content;
+    z-index: 3;
+    align-self: center;
+    font-weight: 600;
 }
 
 #hm__nav {
@@ -176,6 +189,7 @@ textarea {
 #hm__slides {
     display: grid;
     grid-template-rows: 1fr;
+    margin-top: 70px;
 }
 
 .hm_slides_container {
@@ -452,7 +466,7 @@ textarea {
 #hm__footer__top__socials__div {
     display: grid;
     gap: 10px;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr;
     align-items: center;
     justify-items: center;
     padding: 25px;
@@ -494,6 +508,9 @@ textarea {
     #hm__site__logo {
         grid-column: 1/2;
     }
+    #hm__header__dail {
+        grid-column: 3/5;
+    }
     #hm__menu__btn {
         grid-column: 8/9;
     }
@@ -502,6 +519,9 @@ textarea {
     }
     #hm_slide {
         grid-template-columns: repeat(8, 1fr);
+    }
+    #hm__slides {
+        margin-top: 50px;
     }
     #hm_slide_img {
         grid-column: 1/9;
@@ -606,6 +626,9 @@ textarea {
     #hm_main_body {
         padding: 25px 120px;
     }
+    #hm__slides {
+        margin-top: 80px;
+    }
     .hm_main_body_sec_body {
         grid-template-columns: 1fr 1fr 1fr 1fr;
     }
@@ -633,6 +656,7 @@ textarea {
     gap: 5px;
     grid-template-columns: 1fr;
     padding: 0 25px;
+    margin-top: 70px;
 }
 
 #dit_body_head {
@@ -649,10 +673,22 @@ textarea {
     grid-row: 1;
     width: 160px;
 }
+.order_btn {
+    background-color: var(--primary);
+    width: fit-content;
+    font-weight: 600;
+    border-radius: 5px;
+    padding: 5px;
+}
 
 ._cap {
     text-transform: capitalize;
     font-weight: 600;
+}
+
+
+.dit_body_desc {
+    font-style: italic;
 }
 
 .detail_main_body .hm_main_body_sec_head {
@@ -664,6 +700,7 @@ textarea {
     /* tablets */
     #dit_body {
         padding: 15px 60px;
+        margin-top: 40px;
     }
     .dit_body_head_items {
         grid-template-columns: 1fr 1fr 1fr 1fr;
@@ -674,5 +711,6 @@ textarea {
     /* desktops */
     #dit_body {
         padding: 30px 120px;
+        margin-top: 60px;
     }
 }

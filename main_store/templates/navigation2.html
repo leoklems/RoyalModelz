@@ -1,0 +1,17 @@
+{% load static %}
+{% load cache %}
+
+<article id="hm_menu_bar">
+                <a href="{% url 'store:home' %}" id="hm__site__logo">
+                    <img src="{% static 'assets/images/logo.png'%}" alt="site logo" id="hm__img__logo">
+                </a>
+                <a id="hm__header__dail" href="tel:+234 809 349 0689"><i class="fas fa-phone"></i> call us 24/7</a>
+                <nav id="hm__nav" class="hm__nav">
+                    <ul id="hm__nav__list">
+                        <li class="hm__nav__list__item">
+                            <a href="{% url 'store:home' %}" class="hm__nav__item__link">home</a>
+                        </li>
+                    </ul>
+                </nav>
+                <a href="" id="hm__menu__btn" class="hm__menu__btn"><i class="fas fa-bars"></i></a>
+            </article>
