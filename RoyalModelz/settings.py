@@ -123,7 +123,7 @@ DATABASES = {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'RoyalModelz',
         'USER': 'admin',
-        'PASSWORD': 'admin',
+        'PASSWORD': 'mN2_oj55@c3',
         'HOST': 'localhost',
         'PORT': '3306',
     }
